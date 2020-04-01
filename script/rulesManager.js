@@ -16,7 +16,7 @@
  */
 
 let rulesManager = new RulesManager();
-
+ 
 function RulesManager() {
 
   let rulesId = [];

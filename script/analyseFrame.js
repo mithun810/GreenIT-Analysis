@@ -30,6 +30,7 @@ function start_analyse() {
     const inlineJsScript = getInlineJsScript();
     const inlineJsScriptsNumber = getInlineJsScriptsNumber();
     const imagesResizedInBrowser = getImagesResizedInBrowser();
+    const settimeoutcount=getSettimeoutCount();
 
 
     pageAnalysis = {
@@ -43,6 +44,7 @@ function start_analyse() {
       "inlineJsScript": inlineJsScript,
       "inlineJsScriptsNumber": inlineJsScriptsNumber,
       "imagesResizedInBrowser": imagesResizedInBrowser,
+      "setTimeoutCount":settimeoutcount
     }
   }
   else pageAnalysis = {
@@ -55,6 +57,29 @@ function start_analyse() {
 
 }
 
+function getSettimeoutCount() {
+  let scriptArray = Array.from(document.scripts);
+  let getSettimeoutCount = 0;
+  let result=null;
+  let xmlhttp= new XMLHttpRequest();
+  scriptArray.forEach(script => {
+    console.log("script name:: ",script.src)
+    let isJSON = (String(script.type) === "application/ld+json"); // Exclude type="application/ld+json" from count
+    if ((!isJSON))
+    {
+      xmlhttp.open("GET",script.src,false)
+      xmlhttp.send();
+      if(xmlhttp.status==200)
+      {
+        result=xmlhttp.responseText;
+        if(result.length > 0)
+        getSettimeoutCount++;
+      }
+      result=null;
+    } 
+  });
+  return getSettimeoutCount;
+}
 
 
 function getPluginsNumber() {
@@ -92,7 +117,7 @@ return inlineStyleSheetsNumber;
 }
 
 
-function getInlineJsScript() {
+function getInlineJsScript() {  
   let scriptArray = Array.from(document.scripts);
   let scriptText = "";
   scriptArray.forEach(script => {

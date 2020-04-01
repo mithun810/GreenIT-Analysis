@@ -1,7 +1,7 @@
 {
   "description": "GreenIT-Analysis",
   "manifest_version": 2,
-  "name": "GreenIT-Analysis",
+  "name": "GreenIT-Analysis-2",
   "version": "2.1.1",
   "homepage_url": "https://github.com/didierfred/GreenIT-Analysis",
   "icons" : {

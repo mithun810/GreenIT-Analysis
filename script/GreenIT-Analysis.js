@@ -1,7 +1,7 @@
 
 
 
-chrome.devtools.panels.create("GreenIT",
+chrome.devtools.panels.create("GreenIT-2",
   "../icons/logo-48.png",
   "../GreenPanel.html",
   (panel) => {

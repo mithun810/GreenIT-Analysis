@@ -102,6 +102,7 @@ function MeasuresAcquisition(rules) {
       "waterConsumption": 0,
       "greenhouseGasesEmission": 0,
       "pluginsNumber": 0,
+      "setTimeoutCount":0,
       "printStyleSheetsNumber": 0,
       "inlineStyleSheetsNumber": 0,
       "emptySrcTagNumber": 0,
@@ -123,7 +124,7 @@ function MeasuresAcquisition(rules) {
 
     if (analyseBestPractices) {
       measures.pluginsNumber += frameMeasures.pluginsNumber;
-
+      measures.setTimeoutCount+=frameMeasures.setTimeoutCount;
       measures.printStyleSheetsNumber += frameMeasures.printStyleSheetsNumber;
       if (measures.inlineStyleSheetsNumber < frameMeasures.inlineStyleSheetsNumber) measures.inlineStyleSheetsNumber = frameMeasures.inlineStyleSheetsNumber;
       measures.emptySrcTagNumber += frameMeasures.emptySrcTagNumber;

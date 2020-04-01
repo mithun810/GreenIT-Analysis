@@ -550,6 +550,27 @@
       }
     }
   },
+  "rule_SetTimeout": {
+    "message": "Do not use String in SetTimeout Function",
+    "description": "Do not use String in SetTimeout Function"
+  },
+  "rule_SetTimeout_DetailDescription": {
+    "message": "Avoid using String in SetTimeout Function",
+    "description": "Do not use string in SetTimeout"
+  },
+  "rule_SetTimeout_DefaultComment": {
+    "message": "No SetTimeout with String found",
+    "description": "No SetTimeout with String found"
+  },
+  "rule_SetTimeout_Comment": {
+    "message": "LOL SetTimeout with String found",
+    "description": "Number of plugin found",
+    "placeholders": {
+      "NB_SetTimeout": {
+        "content": "$1"
+      }
+    }
+  },
   "rule_PrintStyleSheet": {
     "message": "Provide print stylesheet",
     "description": "Provide print stylesheet"
